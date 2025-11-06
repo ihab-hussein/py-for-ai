@@ -50,3 +50,27 @@ print("\nFiles saved:")
 print("- output/sales_data.json")
 print("- output/sales_data.xlsx") 
 print("- output/sales_with_totals.csv")
+
+
+# Open terminal in VS Code (Terminal > New Terminal)
+#git config --global user.name "ihab-hussein"
+#git config --global user.email "ihab.a.hussein@gmail.com"
+
+# ihab-hussein
+## Initialize Git in your project
+# git init
+
+# # Add all your files
+# git add .
+
+# # Create your first commit
+# git commit -m "Initial commit"
+
+# # Rename branch to main
+# git branch -M main
+
+# # Connect to GitHub with HTTPS (use YOUR username)
+# git remote add origin https://github.com/YOUR-USERNAME/python-for-ai.git
+
+# # Push your code
+# git push -u origin main
