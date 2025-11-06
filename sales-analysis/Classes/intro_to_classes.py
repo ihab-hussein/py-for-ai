@@ -1,0 +1,96 @@
+class openAi_agent:
+    def __init__(self, name, role):
+        self.name = name
+        self.role = role
+
+    def introduce(self):
+        return f"Hello, I am {self.name}, and I am a {self.role}."
+
+
+# 2-----------------------------------------------------------
+
+class APIConfig:
+    def __init__(self, api_key, model="gpt-3.5-turbo", max_tokens=100):
+        self.api_key = api_key
+        self.model = model
+        self.max_tokens = max_tokens
+        self.base_url = "https://api.openai.com/v1"
+
+# Create different configurations
+# Using positional for required arg, named for optional
+dev_config = APIConfig("sk-dev-key", max_tokens=50)
+
+# Using all named arguments (clearest)
+prod_config = APIConfig(api_key="sk-prod-key", model="gpt-4", max_tokens=1000)
+
+# Access the configuration
+print(dev_config.model)        # gpt-3.5-turbo
+print(prod_config.model)       # gpt-4
+print(prod_config.max_tokens)  # 1000
+
+
+class DataValidator:
+    def __init__(self):
+        self.errors = []
+    
+    def validate_email(self, email):
+        if "@" not in email:
+            self.errors.append(f"Invalid email: {email}")
+            return False
+        return True
+    
+    def validate_age(self, age):
+        if age < 0 or age > 150:
+            self.errors.append(f"Invalid age: {age}")
+            return False
+        return True
+    
+    def get_errors(self):
+        return self.errors
+
+# Use the validator
+validator = DataValidator()
+
+# Notice: we don't pass self, just the email
+validator.validate_email(email="bad-email")
+validator.validate_age(age=200)
+
+# Or using positional arguments
+validator.validate_email("another-bad-email")
+validator.validate_age(150)
+
+print(validator.get_errors())
+# ['Invalid email: bad-email', 'Invalid age: 200', 'Invalid email: another-bad-email']
+
+# 3-----------------------------------------------------------
+
+class dog:
+    def __init__(self, name):
+        self.name = name
+        
+    def bark(self):
+        return "Woof!"
+        
+        
+jerry = dog(name="Jerry")
+print(jerry.name)  
+jerry.bark()
+
+
+class animal:
+    def __init__(self, name):
+        # This line was missing
+        self.name = name
+        
+    def eat(self):
+        return f"{self.name} is eating."
+
+class cat(animal):
+    def meow(self):
+        return "Meow!"
+
+    ihab-hussein
+    
+    # Open terminal in VS Code (Terminal > New Terminal)
+#git config --global user.name "ihab-hussein"
+#git config --global user.email "ihab.a.hussein@gmail.com"
