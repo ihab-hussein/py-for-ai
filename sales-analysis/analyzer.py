@@ -47,7 +47,7 @@ df.to_excel('output/sales_data.xlsx', index=False)
 df.to_csv('output/sales_with_totals.csv', index=False)
 
 print("\nFiles saved:")
-print("- output/sales_data.json")
+
 print("- output/sales_data.xlsx") 
 print("- output/sales_with_totals.csv")
 
